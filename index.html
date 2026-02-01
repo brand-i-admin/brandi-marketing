@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand:I - 취미로 나를 브랜딩하는 자기계발 앱 | 습관 형성, 챌린지, AI 챗봇</title>
+    <meta name="description" content="Brand:I와 함께 취미를 성장시키고 나를 브랜딩하세요. AI 챗봇 브랜디가 취미 계획을 도와주고, 챌린지와 루프로 습관을 형성하세요. HBTI로 나만의 취미 유형을 발견하세요.">
+    <meta name="keywords" content="취미, 자기계발, 습관 형성, MBTI, HBTI, 챌린지, 루프, 인증, AI 챗봇">
+    <meta property="og:title" content="Brand:I - 취미로 나를 브랜딩하는 자기계발 앱">
+    <meta property="og:description" content="AI 챗봇과 취미를 계획하고 원클릭으로 캘린더에 등록해요. 챌린지와 루프로 습관을 만들어보세요.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FFF8F3;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #333;
+        }
+
+        .logo span {
+            color: #FF6B00;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FF6B00;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: #222;
+        }
+
+        .hero-content h1 span {
+            color: #FF6B00;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #FF6B00;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background-color: #fff;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+
+        .features-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFF 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #FFE4D6;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #FF6B00;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* AI Chatbot Section */
+        .ai-section {
+            padding: 6rem 2rem;
+            background-color: #FFF8F3;
+        }
+
+        .ai-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .ai-content {
+            flex: 1;
+        }
+
+        .ai-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #222;
+        }
+
+        .ai-content h2 span {
+            color: #FF6B00;
+        }
+
+        .ai-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .chat-demo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+        }
+
+        .chat-bubble {
+            padding: 1rem 1.25rem;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .chat-bubble.user {
+            background-color: #FF6B00;
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-bubble.bot {
+            background-color: #fff;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .bot-name {
+            display: block;
+            font-weight: 600;
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* HBTI Section */
+        .hbti-section {
+            padding: 6rem 2rem;
+            background-color: #fff;
+        }
+
+        .hbti-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hbti-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+
+        .hbti-container h2 span {
+            color: #FF6B00;
+        }
+
+        .hbti-description {
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hbti-highlight {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+            color: #fff;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hbti-highlight p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hbti-highlight .small {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #FF6B00 0%, #FF8533 100%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-section .btn {
+            background-color: #fff;
+            color: #FF6B00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 6rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .ai-container {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features h2,
+            .ai-content h2,
+            .hbti-container h2,
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Brand<span>:I</span></div>
+            <ul class="nav-links">
+                <li><a href="#features">주요 기능</a></li>
+                <li><a href="#ai">AI 챗봇</a></li>
+                <li><a href="#hbti">HBTI</a></li>
+                <li><a href="#download">다운로드</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>취미를 성장시키고,<br><span>나를 브랜딩</span>하세요!</h1>
+                <p class="hero-subtitle">AI 챗봇과 취미를 계획하고<br>"원클릭"으로 캘린더에 등록해요</p>
+                <div class="cta-buttons">
+                    <a href="https://apps.apple.com/app/brand-i/id6755538614" class="btn btn-primary">
+                        App Store
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=io.brandi.app" class="btn btn-secondary">
+                        Google Play
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/brandi-app-main.png" alt="Brand:I 앱 화면 - 캘린더와 챌린지 리스트">
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="features-container">
+                <h2>취미로 시작하는 자기계발</h2>
+                <p class="features-subtitle">챌린지와 루프로 습관을 만들고, 인증으로 성취감을 느껴보세요</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>챌린지</h3>
+                        <p>목표를 설정하고 도전하세요. 다양한 취미 챌린지에 참여하여 성장하는 나를 발견할 수 있어요.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>루프</h3>
+                        <p>반복되는 습관을 루프로 만들어보세요. 꾸준히 실천하면 습관이 되고, 습관이 나를 바꿔요.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📸</div>
+                        <h3>인증</h3>
+                        <p>오늘의 활동을 인증하고 기록하세요. 쌓여가는 인증이 나만의 성장 스토리가 됩니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📅</div>
+                        <h3>캘린더</h3>
+                        <p>AI가 추천한 취미 계획을 원클릭으로 캘린더에 등록하세요. 체계적인 취미 생활이 가능해져요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chatbot Section -->
+        <section class="ai-section" id="ai">
+            <div class="ai-container">
+                <div class="ai-content">
+                    <h2>AI 챗봇 <span>브랜디</span>와 함께</h2>
+                    <p>무슨 취미를 시작해야 할지 모르겠다면? 브랜디에게 물어보세요!</p>
+                </div>
+                <div class="chat-demo">
+                    <div class="chat-bubble user">나 러닝하고 싶은데 추천해줄만한 챌린지 있어?</div>
+                    <div class="chat-bubble bot">
+                        <span class="bot-name">🌱 브랜디</span>
+                        '나의 러닝' 프로젝트에서 추천할게요! 러닝은 얼마나 해보셨어요?
+                    </div>
+                    <div class="chat-bubble user">예전에 5km씩 일주일에 세 번 달렸어!</div>
+                    <div class="chat-bubble bot">
+                        <span class="bot-name">🌱 브랜디</span>
+                        오, 좋아요. 다시 새로운 목표에 도전할 차례에요!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HBTI Section -->
+        <section class="hbti-section" id="hbti">
+            <div class="hbti-container">
+                <h2>나만의 취미 유형, <span>HBTI</span></h2>
+                <p class="hbti-description">MBTI처럼 취미에도 유형이 있어요! HBTI(Hobby Type Indicator)로 나에게 맞는 취미를 발견하세요.</p>
+                <div class="hbti-highlight">
+                    <p>간단한 테스트로 나의 취미 성향을 파악하고,<br>브랜디가 맞춤 취미를 추천해드려요.</p>
+                    <p class="small">* HBTI는 Brand:I만의 취미 유형 검사입니다</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="download">
+            <h2>지금 시작하세요</h2>
+            <p>취미로 나를 브랜딩하는 가장 쉬운 방법, Brand:I</p>
+            <a href="https://apps.apple.com/app/brand-i/id6755538614" class="btn">앱 다운로드</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Brand:I. All rights reserved.</p>
+    </footer>
+</body>
+</html>
