@@ -14,7 +14,7 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Brand:I (브랜디)",
-        "headline": "AI와 함께하는 취미 성장 및 퍼스널 브랜딩 앱",
+        "headline": "AI와 함께하는 취미 성장 커뮤니티 sns 및 퍼스널 브랜딩 앱",
         "operatingSystem": "ANDROID, IOS",
         "applicationCategory": "LifestyleApplication",
         "offers": {
@@ -22,7 +22,7 @@
             "price": "0",
             "priceCurrency": "KRW"
         },
-        "description": "HBTI 기반 성격 분석을 통해 나만의 취미를 찾고, AI 코치와 함께 챌린지를 달성하며 성장하는 자기계발 앱입니다."
+        "description": "HBTI 기반 성격 분석을 통해 나만의 취미를 찾고, AI 코치와 함께 챌린지를 달성하며 성장하는 자기계발 앱입니다. 커뮤니티 기능을 통해 취미 관련 정보를 공유하고 소통할 수 있습니다."
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,7 +96,7 @@
             display: flex;
             align-items: center;
             gap: 4rem;
-            min-height: 100vh;
+            min-height: 70vh;
         }
 
         .hero-content {
@@ -154,13 +154,14 @@
         }
 
         .hero-image {
-            flex: 1;
+            flex: 1.7;
             display: flex;
             justify-content: center;
         }
 
         .hero-image img {
             max-width: 100%;
+            width: 100%;
             height: auto;
             border-radius: 20px;
         }
@@ -169,6 +170,8 @@
         .features {
             padding: 6rem 2rem;
             background-color: #fff;
+            min-height: 70vh;
+            scroll-margin-top: 70px;
         }
 
         .features-container {
@@ -192,8 +195,8 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
 
         .feature-card {
@@ -233,10 +236,16 @@
             font-size: 0.95rem;
         }
 
+        .feature-card p strong {
+            color: #FF6B00;
+            font-weight: 700;
+        }
+
         /* AI Chatbot Section */
         .ai-section {
             padding: 6rem 2rem;
             background-color: #FFF8F3;
+            scroll-margin-top: 70px;
         }
 
         .ai-container {
@@ -309,6 +318,7 @@
         .hbti-section {
             padding: 6rem 2rem;
             background-color: #fff;
+            scroll-margin-top: 70px;
         }
 
         .hbti-container {
@@ -355,6 +365,133 @@
             opacity: 0.9;
         }
 
+        /* Screenshots Section */
+        .screenshots-section {
+            padding: 6rem 2rem;
+            background-color: #FFF8F3;
+            scroll-margin-top: 70px;
+        }
+
+        .screenshots-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .screenshots-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+
+        .screenshots-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .screenshots-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .screenshots-nav-btn {
+            padding: 0.6rem 1.2rem;
+            border: 2px solid #FFE4D6;
+            background-color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .screenshots-nav-btn:hover {
+            border-color: #FF6B00;
+            color: #FF6B00;
+        }
+
+        .screenshots-nav-btn.active {
+            background-color: #FF6B00;
+            border-color: #FF6B00;
+            color: #fff;
+        }
+
+        .screenshots-slider {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 1rem 0.5rem 2rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .screenshots-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshots-slider::-webkit-scrollbar-track {
+            background: #FFE4D6;
+            border-radius: 4px;
+        }
+
+        .screenshots-slider::-webkit-scrollbar-thumb {
+            background: #FF6B00;
+            border-radius: 4px;
+        }
+
+        .screenshot-card {
+            flex: 0 0 auto;
+            width: 280px;
+            position: relative;
+            scroll-snap-align: start;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .screenshot-card.hidden {
+            display: none;
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .badge-calendar {
+            background-color: #4CAF50;
+        }
+
+        .badge-project {
+            background-color: #2196F3;
+        }
+
+        .badge-ai {
+            background-color: #FF6B00;
+        }
+
+        .badge-challenge {
+            background-color: #9C27B0;
+        }
+
         /* CTA Section */
         .cta-section {
             padding: 6rem 2rem;
@@ -391,6 +528,32 @@
             opacity: 0.8;
         }
 
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .footer-links .divider {
+            margin: 0 0.75rem;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
@@ -411,6 +574,10 @@
                 flex-direction: column;
             }
 
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .nav-links {
                 display: none;
             }
@@ -429,10 +596,11 @@
         <nav>
             <div class="logo">Brand<span>:I</span></div>
             <ul class="nav-links">
+                <li><a href="#">홈</a></li>
                 <li><a href="#features">주요 기능</a></li>
                 <li><a href="#ai">AI 챗봇</a></li>
                 <li><a href="#hbti">HBTI</a></li>
-                <li><a href="#download">다운로드</a></li>
+                <li><a href="#screenshots">앱 미리보기</a></li>
             </ul>
         </nav>
     </header>
@@ -441,10 +609,10 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1>취미를 성장시키고,<br><span>나를 브랜딩</span>하세요!</h1>
+                <h1>Brand:I와 함께 <br>취미를 성장시키고,<br><span>나를 브랜딩</span>하세요!</h1>
                 <p class="hero-subtitle">AI 챗봇과 취미를 계획하고<br>"원클릭"으로 캘린더에 등록해요</p>
                 <div class="cta-buttons">
-                    <a href="https://apps.apple.com/app/brand-i/id6755538614" class="btn btn-primary">
+                    <a href="https://apps.apple.com/kr/app/%EB%B8%8C%EB%9E%9C%EB%94%94-%EC%B7%A8%EB%AF%B8-%EC%84%B1%EC%9E%A5-%EC%8A%B5%EA%B4%80-%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0-sns/id6755538614" class="btn btn-primary">
                         App Store
                     </a>
                     <a href="https://play.google.com/store/apps/details?id=io.brandi.app" class="btn btn-secondary">
@@ -460,28 +628,30 @@
         <!-- Features Section -->
         <section class="features" id="features">
             <div class="features-container">
-                <h2>취미로 시작하는 자기계발</h2>
-                <p class="features-subtitle">챌린지와 루프로 습관을 만들고, 인증으로 성취감을 느껴보세요</p>
+                <h2>체계적인 취미 성장을 위한<br>Brand:I 시스템</h2>
+                <p class="features-subtitle">프로젝트를 정의하고, AI의 도움을 받아 전문가로 성장하는 4단계 프로세스</p>
+
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>챌린지</h3>
-                        <p>목표를 설정하고 도전하세요. 다양한 취미 챌린지에 참여하여 성장하는 나를 발견할 수 있어요.</p>
+                        <div class="feature-icon">📅</div>
+                        <h3>스마트 캘린더</h3>
+                        <p>AI와 함께 등록한 챌린지 일정을 메인 홈에서 한눈에 확인하세요. <strong>언제부터 언제까지</strong> 무엇을 달성해야 할지 명확하게 보여줍니다.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
-                        <h3>루프</h3>
-                        <p>반복되는 습관을 루프로 만들어보세요. 꾸준히 실천하면 습관이 되고, 습관이 나를 바꿔요.</p>
+                        <div class="feature-icon">📂</div>
+                        <h3>프로젝트 & 루프</h3>
+                        <p><strong>'프로젝트'</strong>를 생성하여 한 분야의 전문가가 되어보세요. 다른 사람과 함께하려면 <strong>'루프'</strong>에 참여하여 함께 성장해요.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI 챌린지 큐레이션</h3>
+                        <p>어떤 활동을 해야 할지 막막한가요? AI 챗봇이 내 수준에 딱 맞는 챌린지를 추천하고, <strong>'원클릭'으로 캘린더에 등록</strong>해 줍니다.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📸</div>
-                        <h3>인증</h3>
-                        <p>오늘의 활동을 인증하고 기록하세요. 쌓여가는 인증이 나만의 성장 스토리가 됩니다.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📅</div>
-                        <h3>캘린더</h3>
-                        <p>AI가 추천한 취미 계획을 원클릭으로 캘린더에 등록하세요. 체계적인 취미 생활이 가능해져요.</p>
+                        <h3>챌린지 수행 & 인증</h3>
+                        <p>프로젝트/루프 안의 세부 <strong>'챌린지'</strong>를 수행하고 사진으로 <strong>'인증'</strong>하세요. 쌓여가는 인증 기록이 당신의 성장 스토리가 됩니다.</p>
                     </div>
                 </div>
             </div>
@@ -521,16 +691,91 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section" id="download">
-            <h2>지금 시작하세요</h2>
-            <p>취미로 나를 브랜딩하는 가장 쉬운 방법, Brand:I</p>
-            <a href="https://apps.apple.com/app/brand-i/id6755538614" class="btn">앱 다운로드</a>
+        <!-- Screenshots Section -->
+        <section class="screenshots-section" id="screenshots">
+            <div class="screenshots-container">
+                <h2>앱 미리보기</h2>
+                <p class="screenshots-subtitle">Brand:I의 주요 화면들을 확인해보세요</p>
+
+                <div class="screenshots-nav">
+                    <button class="screenshots-nav-btn active" data-category="all">전체</button>
+                    <button class="screenshots-nav-btn" data-category="calendar">스마트 캘린더</button>
+                    <button class="screenshots-nav-btn" data-category="project">프로젝트 & 루프</button>
+                    <button class="screenshots-nav-btn" data-category="ai">AI 큐레이션</button>
+                    <button class="screenshots-nav-btn" data-category="challenge">챌린지 & 인증</button>
+                </div>
+
+                <div class="screenshots-slider">
+                    <div class="screenshot-card" data-category="calendar">
+                        <span class="screenshot-badge badge-calendar">스마트 캘린더</span>
+                        <img src="images/1_home.jpeg" alt="Brand:I 홈 화면 - 스마트 캘린더">
+                    </div>
+                    <div class="screenshot-card" data-category="project">
+                        <span class="screenshot-badge badge-project">프로젝트 & 루프</span>
+                        <img src="images/2_project_detail.jpeg" alt="프로젝트 상세 화면">
+                    </div>
+                    <div class="screenshot-card" data-category="project">
+                        <span class="screenshot-badge badge-project">프로젝트 & 루프</span>
+                        <img src="images/4_loops_list.jpeg" alt="루프 목록 화면">
+                    </div>
+                    <div class="screenshot-card" data-category="project">
+                        <span class="screenshot-badge badge-project">프로젝트 & 루프</span>
+                        <img src="images/3_loop_detail.jpeg" alt="루프 상세 화면">
+                    </div>
+                    <div class="screenshot-card" data-category="ai">
+                        <span class="screenshot-badge badge-ai">AI 큐레이션</span>
+                        <img src="images/5_ai_chat.jpeg" alt="AI 챗봇 대화 화면">
+                    </div>
+                    <div class="screenshot-card" data-category="challenge">
+                        <span class="screenshot-badge badge-challenge">챌린지 & 인증</span>
+                        <img src="images/6_logs.jpeg" alt="인증 로그 화면">
+                    </div>
+                    <div class="screenshot-card" data-category="challenge">
+                        <span class="screenshot-badge badge-challenge">챌린지 & 인증</span>
+                        <img src="images/7_profile_logs.jpeg" alt="프로필 인증 기록">
+                    </div>
+                    <div class="screenshot-card" data-category="challenge">
+                        <span class="screenshot-badge badge-challenge">챌린지 & 인증</span>
+                        <img src="images/8_profile_brandi.jpeg" alt="프로필 브랜디 화면">
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Brand:I. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Brand:I. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">이용약관</a>
+                <span class="divider">|</span>
+                <a href="#">개인정보처리방침</a>
+                <span class="divider">|</span>
+                <span>Contact: support@brand-i.app</span>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Screenshots category filter
+        document.querySelectorAll('.screenshots-nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.screenshots-nav-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+                const cards = document.querySelectorAll('.screenshot-card');
+
+                cards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
